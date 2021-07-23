@@ -69,6 +69,53 @@ public class Produto {
         this.imageURL = imageURL;
     }
 
+    
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
+        result = prime * result + (int) (id ^ (id >>> 32));
+        result = prime * result + ((imageURL == null) ? 0 : imageURL.hashCode());
+        result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+        long temp;
+        temp = Double.doubleToLongBits(preco);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Produto other = (Produto) obj;
+        if (descricao == null) {
+            if (other.descricao != null)
+                return false;
+        } else if (!descricao.equals(other.descricao))
+            return false;
+        if (id != other.id)
+            return false;
+        if (imageURL == null) {
+            if (other.imageURL != null)
+                return false;
+        } else if (!imageURL.equals(other.imageURL))
+            return false;
+        if (nome == null) {
+            if (other.nome != null)
+                return false;
+        } else if (!nome.equals(other.nome))
+            return false;
+        if (Double.doubleToLongBits(preco) != Double.doubleToLongBits(other.preco))
+            return false;
+        return true;
+    }
+
     @Override
     public String toString() {
         return "Produto [descricao=" + descricao + ", id=" + id + ", imageURL=" + imageURL + ", nome=" + nome
