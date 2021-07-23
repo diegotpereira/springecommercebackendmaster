@@ -3,8 +3,8 @@ package br.com.java.springecommercebackendmaster.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "perfil_usuario")
-public class PerfilUsuario {
+@Table(name = "usuario")
+public class Usuario {
     
     private long id;
 
@@ -16,10 +16,10 @@ public class PerfilUsuario {
 
     private String sobrenome;
 
-    public PerfilUsuario() {
+    public Usuario() {
     }
 
-    public PerfilUsuario(long id, String usuarionome, String email, String nome, String sobrenome) {
+    public Usuario(long id, String usuarionome, String email, String nome, String sobrenome) {
         this.id = id;
         this.usuarionome = usuarionome;
         this.email = email;
@@ -87,7 +87,7 @@ public class PerfilUsuario {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        PerfilUsuario other = (PerfilUsuario) obj;
+        Usuario other = (Usuario) obj;
         if (email == null) {
             if (other.email != null)
                 return false;
