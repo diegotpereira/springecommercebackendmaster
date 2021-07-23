@@ -27,7 +27,7 @@ public class CategoriaController {
         return new ResponseEntity<List<Categoria>>(body, HttpStatus.OK);
     }
 
-    @PostMapping("/criar")
+    @PostMapping("/add")
     public ResponseEntity<ApiResponse> criarCategoria(@Valid @RequestBody Categoria categoria) {
         if (service.lerCategoria(categoria.getCategoriaNome()) !=null) {
             
