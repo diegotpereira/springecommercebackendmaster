@@ -55,6 +55,30 @@ public class Categoria {
         return true;
     }
 
+    public long getCategoriaId() {
+        return categoriaId;
+    }
+
+    public void setCategoriaId(long categoriaId) {
+        this.categoriaId = categoriaId;
+    }
+
+    public String getCategoriaNome() {
+        return categoriaNome;
+    }
+
+    public void setCategoriaNome(String categoriaNome) {
+        this.categoriaNome = categoriaNome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     @Override
     public String toString() {
         return "Usuario [categoriaId=" + categoriaId + ", categoriaNome=" + categoriaNome + ", descricao=" + descricao
